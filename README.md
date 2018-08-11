@@ -2,7 +2,6 @@
 Updated by Lu Da Jun
 ---------------------------------------------------
 Aug. 11 2018: Add support for Outlook (mainly tested for Outlook 2016)
-
 ---------------------------------------------------
 Below information from original developer:
 
