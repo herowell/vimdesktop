@@ -5,9 +5,9 @@ Update History by Lu Da Jun
 
 Aug. 11 2018: Add support for Outlook
 
-----------------------------------------------------
-Below information referenced from original developer:
 
+Below information referenced from original developer:
+----------------------------------------------------
 让所有 Windows 桌面程序拥有 Vim 操作风格的辅助工具。
 
 ### 链接
