@@ -5,9 +5,9 @@
 MicrosoftOutlook:
     vim.SetWin("MicrosoftOutlook", "rctrl_renwnd32")
 
-    vim.comment("<Mso_Sort_By_Date>", "Sorte emails ordered by date")
-    vim.comment("<Mso_Sort_By_Sender>", "Sorte emails ordered by sender")
-    vim.comment("<Mso_Sort_By_Subject>", "Sorte emails ordered by subject")
+    vim.comment("<Mso_Sort_By_Date>", "Sort emails by date")
+    vim.comment("<Mso_Sort_By_Sender>", "Sort emails by sender")
+    vim.comment("<Mso_Sort_By_Subject>", "Sort emails by subject")
 
     vim.mode("insert", "MicrosoftOutlook")
     vim.map("<esc>", "<Mso_NormalMode>", "MicrosoftOutlook")
