@@ -2,7 +2,7 @@
 ;Referenced Gmail keys for Outlook 2016 version 4.0 by Myrick
 ;By Lu Da Jun
 
-global Win_Name := "microsoftoutlooks"
+global Win_Name := "Microsoftoutlook"
 
 MicrosoftOutlook:
     vim.SetWin(Win_Name, "rctrl_renwnd32")
