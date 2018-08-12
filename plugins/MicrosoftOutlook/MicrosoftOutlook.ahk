@@ -7,95 +7,95 @@ global MSO := "Microsoftoutlook"
 MicrosoftOutlook:
     vim.SetWin(MSO, "rctrl_renwnd32")
 
-    vim.comment("<Mso_Sort_By_Date>", "Sort emails by date")
-    vim.comment("<Mso_Sort_By_Sender>", "Sort emails by sender")
-    vim.comment("<Mso_Sort_By_Subject>", "Sort emails by subject")
+    vim.comment("<MSO_Sort_By_Date>", "Sort emails by date")
+    vim.comment("<MSO_Sort_By_Sender>", "Sort emails by sender")
+    vim.comment("<MSO_Sort_By_Subject>", "Sort emails by subject")
 
     vim.mode("insert", MSO)
-    vim.map("<esc>", "<Mso_NormalMode>", MSO)
+    vim.map("<esc>", "<MSO_NormalMode>", MSO)
     vim.mode("normal", MSO)
 
-    vim.map("i", "<Mso_InsertMode>", MSO)
-    vim.map("a", "<Mso_Sort_By_Sender>", MSO)
-    vim.map("s", "<Mso_Sort_By_Subject>", MSO)
-    vim.map("d", "<Mso_Sort_By_Date>", MSO)
+    vim.map("i", "<MSO_InsertMode>", MSO)
+    vim.map("a", "<MSO_Sort_By_Sender>", MSO)
+    vim.map("s", "<MSO_Sort_By_Subject>", MSO)
+    vim.map("d", "<MSO_Sort_By_Date>", MSO)
 
-    vim.map("h", "<Mso_FirstMail>", MSO)
-    vim.map("j", "<Mso_Down>", MSO)
-    vim.map("k", "<Mso_Up>", MSO)
-    vim.map("l", "<Mso_LastMail>", MSO)
+    vim.map("h", "<MSO_FirstMail>", MSO)
+    vim.map("j", "<MSO_Down>", MSO)
+    vim.map("k", "<MSO_Up>", MSO)
+    vim.map("l", "<MSO_LastMail>", MSO)
     
-    vim.map("o", "<Mso_Open>", MSO)
-    vim.map("r", "<Mso_Reply>", MSO)
-    vim.map("v", "<Mso_ReplyToAll>", MSO)
-    vim.map("f", "<Mso_Forward>", MSO)
-    vim.map("n", "<Mso_New>", MSO)
+    vim.map("o", "<MSO_Open>", MSO)
+    vim.map("r", "<MSO_Reply>", MSO)
+    vim.map("v", "<MSO_ReplyToAll>", MSO)
+    vim.map("f", "<MSO_Forward>", MSO)
+    vim.map("n", "<MSO_New>", MSO)
 
-    vim.map(".", "<Mso_FocusSearchBox>", MSO)
+    vim.map(".", "<MSO_FocusSearchBox>", MSO)
 
-    vim.map("t", "<Mso_ToggleFlag>", MSO)
+    vim.map("t", "<MSO_ToggleFlag>", MSO)
 return
 
-<Mso_Sort_By_Date>:
+<MSO_Sort_By_Date>:
     Send, !vabd
 Return
 
-<Mso_Sort_By_Sender>:
+<MSO_Sort_By_Sender>:
     Send, !vabf
 Return
 
-<Mso_Sort_By_Subject>:
+<MSO_Sort_By_Subject>:
     Send, !vabj
 Return
 
-<Mso_NormalMode>:
+<MSO_NormalMode>:
     vim.mode("normal", MSO)
 return
 
-<Mso_InsertMode>:
+<MSO_InsertMode>:
     vim.mode("insert", MSO)
 return
 
-<Mso_FirstMail>:
+<MSO_FirstMail>:
     Send, {Home}
 return
 
-<Mso_Up>:
+<MSO_Up>:
     Send, {Up}
 return
 
-<Mso_Down>:
+<MSO_Down>:
     Send, {Down}
 return
 
-<Mso_LastMail>:
+<MSO_LastMail>:
     Send, {End}
 return
 
-<Mso_Open>:
+<MSO_Open>:
     Send, ^o
 return
 
-<Mso_Reply>:
+<MSO_Reply>:
     Send, ^r
 return
 
-<Mso_ReplyToAll>:
+<MSO_ReplyToAll>:
     Send, ^+r
 return
 
-<Mso_Forward>:
+<MSO_Forward>:
     Send, ^f 
 return
 
-<Mso_New>:
+<MSO_New>:
     Send, ^n 
 return
 
-<Mso_FocusSearchBox>:
+<MSO_FocusSearchBox>:
     Send, ^e 
 return
 
-<Mso_ToggleFlag>:
+<MSO_ToggleFlag>:
     Send, {Insert} 
 return
