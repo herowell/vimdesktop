@@ -2,38 +2,39 @@
 ;Referenced Gmail keys for Outlook 2016 version 4.0 by Myrick
 ;By Lu Da Jun
 
-global MSO := "Microsoftoutlook"
 
 MicrosoftOutlook:
-    vim.SetWin(MSO, "rctrl_renwnd32")
+    MSOutlook := "MicrosoftOutlook"
+
+    vim.SetWin(MSOutlook, "rctrl_renwnd32")
 
     vim.comment("<MSO_Sort_By_Date>", "Sort emails by date")
     vim.comment("<MSO_Sort_By_Sender>", "Sort emails by sender")
     vim.comment("<MSO_Sort_By_Subject>", "Sort emails by subject")
 
-    vim.mode("insert", MSO)
-    vim.map("<esc>", "<MSO_NormalMode>", MSO)
-    vim.mode("normal", MSO)
+    vim.mode("insert", MSOutlook)
+    vim.map("<esc>", "<MSO_NormalMode>", MSOutlook)
+    vim.mode("normal", MSOutlook)
 
-    vim.map("i", "<MSO_InsertMode>", MSO)
-    vim.map("a", "<MSO_Sort_By_Sender>", MSO)
-    vim.map("s", "<MSO_Sort_By_Subject>", MSO)
-    vim.map("d", "<MSO_Sort_By_Date>", MSO)
+    vim.map("i", "<MSO_InsertMode>", MSOutlook)
+    vim.map("a", "<MSO_Sort_By_Sender>", MSOutlook)
+    vim.map("s", "<MSO_Sort_By_Subject>", MSOutlook)
+    vim.map("d", "<MSO_Sort_By_Date>", MSOutlook)
 
-    vim.map("h", "<MSO_FirstMail>", MSO)
-    vim.map("j", "<MSO_Down>", MSO)
-    vim.map("k", "<MSO_Up>", MSO)
-    vim.map("l", "<MSO_LastMail>", MSO)
+    vim.map("h", "<MSO_FirstMail>", MSOutlook)
+    vim.map("j", "<MSO_Down>", MSOutlook)
+    vim.map("k", "<MSO_Up>", MSOutlook)
+    vim.map("l", "<MSO_LastMail>", MSOutlook)
     
-    vim.map("o", "<MSO_Open>", MSO)
-    vim.map("r", "<MSO_Reply>", MSO)
-    vim.map("v", "<MSO_ReplyToAll>", MSO)
-    vim.map("f", "<MSO_Forward>", MSO)
-    vim.map("n", "<MSO_New>", MSO)
+    vim.map("o", "<MSO_Open>", MSOutlook)
+    vim.map("r", "<MSO_Reply>", MSOutlook)
+    vim.map("v", "<MSO_ReplyToAll>", MSOutlook)
+    vim.map("f", "<MSO_Forward>", MSOutlook)
+    vim.map("n", "<MSO_New>", MSOutlook)
 
-    vim.map(".", "<MSO_FocusSearchBox>", MSO)
+    vim.map(".", "<MSO_FocusSearchBox>", MSOutlook)
 
-    vim.map("t", "<MSO_ToggleFlag>", MSO)
+    vim.map("t", "<MSO_ToggleFlag>", MSOutlook)
 return
 
 <MSO_Sort_By_Date>:
@@ -49,11 +50,11 @@ Return
 Return
 
 <MSO_NormalMode>:
-    vim.mode("normal", MSO)
+    vim.mode("normal", MSOutlook)
 return
 
 <MSO_InsertMode>:
-    vim.mode("insert", MSO)
+    vim.mode("insert", MSOutlook)
 return
 
 <MSO_FirstMail>:

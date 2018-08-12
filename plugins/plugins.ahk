@@ -3,19 +3,21 @@
 #include *i %A_ScriptDir%\plugins\Foobar2000\Foobar2000.ahk
 #include *i %A_ScriptDir%\plugins\General\General.ahk
 #include *i %A_ScriptDir%\plugins\MicrosoftExcel\MicrosoftExcel.ahk
+#include *i %A_ScriptDir%\plugins\MicrosoftOutlook\MicrosoftOutlook.ahk
 #include *i %A_ScriptDir%\plugins\TCCompare\TCCompare.ahk
 #include *i %A_ScriptDir%\plugins\TCDialog\TCDialog.ahk
 #include *i %A_ScriptDir%\plugins\TotalCommander\TotalCommander.ahk
 #include *i %A_ScriptDir%\plugins\WinMerge\WinMerge.ahk
 /*
 [ExtensionsTime]
-BeyondCompare4=20160624155836
-Explorer=20160624155836
-Foobar2000=20160826203506
-General=20180422000807
-MicrosoftExcel=20160624155836
-TCCompare=20170911080456
-TCDialog=20160624155836
-TotalCommander=20180322213022
-WinMerge=20160624155836
+BeyondCompare4=20180812121208
+Explorer=20180812121208
+Foobar2000=20180812121208
+General=20180812121208
+MicrosoftExcel=20180812121208
+MicrosoftOutlook=20180812180638
+TCCompare=20180812121208
+TCDialog=20180812121208
+TotalCommander=20180812121208
+WinMerge=20180812121208
 */
