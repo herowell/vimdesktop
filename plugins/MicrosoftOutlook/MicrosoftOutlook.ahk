@@ -12,6 +12,7 @@ MicrosoftOutlook:
     vim.mode("insert", "MicrosoftOutlook")
     vim.map("<esc>", "<Mso_NormalMode>", "MicrosoftOutlook")
     vim.mode("normal", "MicrosoftOutlook")
+
     vim.map("i", "<Mso_InsertMode>", "MicrosoftOutlook")
     vim.map("a", "<Mso_Sort_By_Sender>", "MicrosoftOutlook")
     vim.map("s", "<Mso_Sort_By_Subject>", "MicrosoftOutlook")
