@@ -3,7 +3,7 @@
 
 Update History by Lu Da Jun
 
-Aug. 11 2018: Add support for Outlook
+- Aug. 11 2018: Add support for Outlook
 
 
 ### Below information referenced from original developer:
