@@ -2,7 +2,6 @@
 ;Referenced Gmail keys for Outlook 2016 version 4.0 by Myrick
 ;By Lu Da Jun
 
-global vim
 
 MicrosoftOutlook:
     MSOutlook := "MicrosoftOutlook"
