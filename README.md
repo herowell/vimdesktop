@@ -3,12 +3,14 @@
 
 Update History by Lu Da Jun
 
-- Aug. 13 2018: Add fv key binding to paste from clipboard
-    - Using fv when composing new email will paste from clipboard
+- Aug. 13 2018: 
+    - Add fv key binding to paste from clipboard
+        - Using fv when composing new email will paste from clipboard
 
-    - It would be useful to using fv in Outlook main window if you have already copied some attachments into clipboard. This action will:
-        1. create a new email and will paste the attachment
-        2. set email subject to the file name
+        - It would be useful to using fv in Outlook main window if you have already copied some attachments into clipboard. This action will:
+            1. create a new email and will paste the attachment
+            2. set email subject to the file name
+    - More function added or adjusted...
 - Aug. 11 2018: Add support for Outlook
 
 Todo List:
