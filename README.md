@@ -5,6 +5,8 @@ Update History by Lu Da Jun
 
 - Aug. 11 2018: Add support for Outlook
 
+Todo List:
+- enable ff&fv when reply/forward/new email instead of showing a find/replace messagebox when f trigger
 
 ### Below information referenced from original developer:
 ---

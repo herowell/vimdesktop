@@ -5,17 +5,16 @@
 
 MicrosoftOutlook:
     MSOutlook := "MicrosoftOutlook"
+    MSOutlook_Cls_Name := "rctrl_renwnd32"
 
-    vim.SetWin(MSOutlook, "rctrl_renwnd32")
+    vim.SetWin(MSOutlook, MSOutlook_Cls_Name)
 
     vim.comment("<MSO_Sort_By_Date>", "Sort emails by date")
     vim.comment("<MSO_Sort_By_Sender>", "Sort emails by sender")
     vim.comment("<MSO_Sort_By_Subject>", "Sort emails by subject")
 
     vim.mode("insert", MSOutlook)
-    ;change key mapping to e to avoid conflict with Outlook default behaviors
-    ;vim.map("<esc>", "<MSO_NormalMode>", MSOutlook)
-    vim.map("e", "<MSO_NormalMode>", MSOutlook) 
+    vim.map("<esc>", "<MSO_NormalMode>", MSOutlook)
     vim.mode("normal", MSOutlook)
 
     vim.map("i", "<MSO_InsertMode>", MSOutlook)
@@ -37,7 +36,17 @@ MicrosoftOutlook:
     vim.map(".", "<MSO_FocusSearchBox>", MSOutlook)
 
     vim.map("t", "<MSO_ToggleFlag>", MSOutlook)
+
+    vim.BeforeActionDo("MSOutlook_Force_Insert_Mode", MSOutlook)
 return
+
+MSOutlook_Force_Insert_Mode()
+{
+    ControlGetFocus, ctrl, AHK_CLASS rctrl_renwnd32
+    if RegExMatch(ctrl, "_WwG1")
+        return true
+    return false
+}
 
 <MSO_Sort_By_Date>:
     Send, !vabd
