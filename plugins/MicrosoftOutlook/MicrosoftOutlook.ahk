@@ -41,7 +41,7 @@ MicrosoftOutlook:
     vim.map("t", "<MSO_ToggleFlag>", MSOutlook)
 
     ;Using fv when composing new email will paste from clipboard
-    ;Useful way to using fv in email list is that you have already copy an attachment into clipboard
+    ;It would be useful to use fv in Outlook main window if you have already copied some attachments into clipboard
     ;This action will:
     ;   1. create a new email and will paste the attachment
     ;   2. set email subject to the file name
