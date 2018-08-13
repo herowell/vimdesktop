@@ -14,6 +14,7 @@ MicrosoftOutlook:
     vim.comment("<MSO_Sort_By_Subject>", "Sort emails by subject")
     vim.comment("<MSO_PasteFromClipboard>", "Paste from clipboard")
     vim.comment("<MSO_Forward>", "Forward selected mail")
+    vim.comment("<MSO_Send>", "Send composing mail")
 
     vim.mode("insert", MSOutlook)
     vim.map("<esc>", "<MSO_NormalMode>", MSOutlook)
@@ -21,14 +22,17 @@ MicrosoftOutlook:
     vim.mode("normal", MSOutlook)
 
     vim.map("i", "<MSO_InsertMode>", MSOutlook)
-    vim.map("a", "<MSO_Sort_By_Sender>", MSOutlook)
-    vim.map("s", "<MSO_Sort_By_Subject>", MSOutlook)
-    vim.map("d", "<MSO_Sort_By_Date>", MSOutlook)
+    vim.map("sa", "<MSO_Sort_By_Sender>", MSOutlook)
+    vim.map("ss", "<MSO_Sort_By_Subject>", MSOutlook)
+    vim.map("sd", "<MSO_Sort_By_Date>", MSOutlook)
+    vim.map("se", "<MSO_Send>", MSOutlook)
 
     vim.map("h", "<MSO_FirstMail>", MSOutlook)
     vim.map("j", "<MSO_Down>", MSOutlook)
     vim.map("k", "<MSO_Up>", MSOutlook)
     vim.map("l", "<MSO_LastMail>", MSOutlook)
+    vim.map("[", "<MSO_NextItem>", MSOutlook)
+    vim.map("]", "<MSO_PreviousItem>", MSOutlook)
     
     vim.map("o", "<MSO_Open>", MSOutlook)
     vim.map("r", "<MSO_Reply>", MSOutlook)
@@ -41,7 +45,7 @@ MicrosoftOutlook:
     vim.map("t", "<MSO_ToggleFlag>", MSOutlook)
 
     ;Using fv when composing new email will paste from clipboard
-    ;It would be useful to use fv in Outlook main window if you have already copied some attachments into clipboard
+    ;It would be useful to use fv in main Outlook window if you have already copied some attachments into clipboard
     ;This action will:
     ;   1. create a new email and will paste the attachment
     ;   2. set email subject to the file name
@@ -60,6 +64,14 @@ MSOutlook_Force_Insert_Mode()
     return false
 }
 
+MSO_Is_Email_Open()
+{
+    ControlGetFocus, ctrl, AHK_CLASS rctrl_renwnd32
+    if RegExMatch(ctrl, "_WwG1")
+        return true
+    return false
+}
+
 <MSO_Sort_By_Date>:
     Send, !vabd
 Return
@@ -70,6 +82,11 @@ Return
 
 <MSO_Sort_By_Subject>:
     Send, !vabj
+Return
+
+<MSO_Send>:
+    if MSO_Is_Email_Open()
+        Send, !s
 Return
 
 <MSO_NormalMode>:
@@ -98,6 +115,16 @@ return
 
 <MSO_LastMail>:
     Send, {End}
+return
+
+<MSO_NextItem>:
+    if MSO_Is_Email_Open()
+        Send, ^.
+return
+
+<MSO_PreviousItem>:
+    if MSO_Is_Email_Open()
+        Send, ^,
 return
 
 <MSO_Open>:
