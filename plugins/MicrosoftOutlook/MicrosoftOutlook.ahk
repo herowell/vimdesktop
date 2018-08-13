@@ -13,7 +13,9 @@ MicrosoftOutlook:
     vim.comment("<MSO_Sort_By_Subject>", "Sort emails by subject")
 
     vim.mode("insert", MSOutlook)
-    vim.map("<esc>", "<MSO_NormalMode>", MSOutlook)
+    ;change key mapping to e to avoid conflict with Outlook default behaviors
+    ;vim.map("<esc>", "<MSO_NormalMode>", MSOutlook)
+    vim.map("e", "<MSO_NormalMode>", MSOutlook) 
     vim.mode("normal", MSOutlook)
 
     vim.map("i", "<MSO_InsertMode>", MSOutlook)

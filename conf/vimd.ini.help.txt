@@ -148,7 +148,9 @@ o=<cm_ContextMenu>
 p=<cm_PackFiles>
 u=<cm_CloseCurrentTab>
 fa=<TC_CopyFileContents>
-ff=<TC_CopyNameOnly>
+;removed and redefine ff due to conflict 
+;ff=<TC_CopyNameOnly>
+fn=<TC_CopyNameOnly>
 zh=<TC_Toggle_50_100Percent>
 zz=<TC_Toggle_50_100Percent_V>
 <S-A>=<TC_ViewFileUnderCursor>

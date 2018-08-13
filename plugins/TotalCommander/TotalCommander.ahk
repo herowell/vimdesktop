@@ -193,6 +193,7 @@
     vim.map("ff", "<cm_CopyToClipboard>", "TTOTAL_CMD")
     vim.map("fz", "<cm_CutToClipboard>", "TTOTAL_CMD")
     vim.map("fv", "<cm_PasteFromClipboard>", "TTOTAL_CMD")
+    vim.map("fn", "<cm_CopyToClipboard>", "TTOTAL_CMD")
 
     ;fb复制到收藏夹某个目录，fd移动到收藏夹的某个目录
     vim.map("fb", "<TC_CopyDirectoryHotlist>", "TTOTAL_CMD")
