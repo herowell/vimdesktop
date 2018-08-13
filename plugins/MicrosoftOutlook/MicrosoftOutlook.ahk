@@ -2,6 +2,7 @@
 ;Referenced Gmail keys for Outlook 2016 version 4.0 by Myrick
 ;By Lu Da Jun
 
+global vim
 
 MicrosoftOutlook:
     MSOutlook := "MicrosoftOutlook"
@@ -12,9 +13,12 @@ MicrosoftOutlook:
     vim.comment("<MSO_Sort_By_Date>", "Sort emails by date")
     vim.comment("<MSO_Sort_By_Sender>", "Sort emails by sender")
     vim.comment("<MSO_Sort_By_Subject>", "Sort emails by subject")
+    vim.comment("<MSO_PasteFromClipboard>", "Paste from clipboard")
+    vim.comment("<MSO_Forward>", "Forward selected mail")
 
     vim.mode("insert", MSOutlook)
     vim.map("<esc>", "<MSO_NormalMode>", MSOutlook)
+
     vim.mode("normal", MSOutlook)
 
     vim.map("i", "<MSO_InsertMode>", MSOutlook)
@@ -37,7 +41,16 @@ MicrosoftOutlook:
 
     vim.map("t", "<MSO_ToggleFlag>", MSOutlook)
 
-    vim.BeforeActionDo("MSOutlook_Force_Insert_Mode", MSOutlook)
+    ;Using fv when composing new email will paste from clipboard
+    ;Useful way to using fv in email list is that you have already copy an attachment into clipboard
+    ;This action will:
+    ;   1. create a new email and will paste the attachment
+    ;   2. set email subject to the file name
+    vim.map("fv", "<MSO_PasteFromClipboard>", MSOutlook)
+
+    ;Force insert mode shall be disabled in order to use "fv" key binding
+    ;Otherwise you can not return back to normal mode due to <esc> will close current email window by default
+    ;vim.BeforeActionDo("MSOutlook_Force_Insert_Mode", MSOutlook)
 return
 
 MSOutlook_Force_Insert_Mode()
@@ -62,6 +75,10 @@ Return
 
 <MSO_NormalMode>:
     vim.mode("normal", MSOutlook)
+return
+
+<MSO_PasteFromClipboard>:
+    send, ^v
 return
 
 <MSO_InsertMode>:
