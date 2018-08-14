@@ -9,9 +9,10 @@ MicrosoftOutlook:
 
     vim.SetWin(MSOutlook, MSOutlook_Cls_Name)
 
-    vim.comment("<MSO_Sort_By_Date>", "Sort emails by date")
     vim.comment("<MSO_Sort_By_Sender>", "Sort emails by sender")
+    vim.comment("<MSO_Sort_By_Recipient>", "Sort emails by recipient")
     vim.comment("<MSO_Sort_By_Subject>", "Sort emails by subject")
+    vim.comment("<MSO_Sort_By_Date>", "Sort emails by date")
     vim.comment("<MSO_PasteFromClipboard>", "Paste from clipboard")
     vim.comment("<MSO_Forward>", "Forward selected mail")
     vim.comment("<MSO_Send>", "Send composing mail")
@@ -23,6 +24,7 @@ MicrosoftOutlook:
 
     vim.map("i", "<MSO_InsertMode>", MSOutlook)
     vim.map("sa", "<MSO_Sort_By_Sender>", MSOutlook)
+    vim.map("sr", "<MSO_Sort_By_Recipient>", MSOutlook)
     vim.map("ss", "<MSO_Sort_By_Subject>", MSOutlook)
     vim.map("sd", "<MSO_Sort_By_Date>", MSOutlook)
     vim.map("se", "<MSO_Send>", MSOutlook)
@@ -43,6 +45,14 @@ MicrosoftOutlook:
     vim.map(".", "<MSO_FocusSearchBox>", MSOutlook)
 
     vim.map("t", "<MSO_ToggleFlag>", MSOutlook)
+    vim.map("x", "<MSO_Delete>", MSOutlook)
+    vim.map("X", "<MSO_PermanentDelete>", MSOutlook)
+
+    vim.map("u", "<MSO_MarkUnread>", MSOutlook)
+    vim.map("U", "<MSO_MarkRead>", MSOutlook)
+
+    vim.map("m", "<MSO_MaximizeWin>", MSOutlook)
+    ;add maximum/normal/minimum/..
 
     ;Using fv when composing new email will paste from clipboard
     ;It would be useful to use fv in main Outlook window if you have already copied some attachments into clipboard
@@ -78,6 +88,10 @@ Return
 
 <MSO_Sort_By_Sender>:
     Send, !vabf
+Return
+
+<MSO_Sort_By_Recipient>:
+    Send, !vabt
 Return
 
 <MSO_Sort_By_Subject>:
@@ -153,4 +167,24 @@ return
 
 <MSO_ToggleFlag>:
     Send, {Insert} 
+return
+
+<MSO_Delete>:
+    Send, {Delete} 
+return
+
+<MSO_PermanentDelete>:
+    Send, +{Delete} 
+return
+
+<MSO_MarkUnread>:
+    Send, ^u 
+return
+
+<MSO_MarkRead>:
+    Send, ^q 
+return
+
+<MSO_MaximizeWin>:
+
 return
