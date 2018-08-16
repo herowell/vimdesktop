@@ -3,6 +3,7 @@
 
 Update History by Lu Da Jun
 
+- Aug. 17 2018: MSO_CopySelectedEmailFromMainOutlookWindow added
 - Aug. 13 2018: 
     - Add fv key binding to paste from clipboard
         - Using fv when composing new email will paste from clipboard
