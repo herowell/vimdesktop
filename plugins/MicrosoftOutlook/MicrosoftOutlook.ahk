@@ -39,7 +39,7 @@ MicrosoftOutlook:
     vim.map("o", "<MSO_Open>", MSOutlook)
     vim.map("r", "<MSO_Reply>", MSOutlook)
     vim.map("v", "<MSO_ReplyToAll>", MSOutlook)
-    vim.map("f", "<MSO_Forward>", MSOutlook)
+    vim.map("w", "<MSO_Forward>", MSOutlook)
     vim.map("n", "<MSO_New>", MSOutlook)
 
     vim.map(".", "<MSO_FocusSearchBox>", MSOutlook)
@@ -64,6 +64,8 @@ MicrosoftOutlook:
     ;Force insert mode shall be disabled in order to use "fv" key binding
     ;Otherwise you can not return back to normal mode due to <esc> will close current email window by default
     ;vim.BeforeActionDo("MSOutlook_Force_Insert_Mode", MSOutlook)
+
+    vim.map("ff", "<MSO_CopySelectedEmailFromMainOutlookWindow>", MSOutlook)
 return
 
 MSOutlook_Force_Insert_Mode()
@@ -187,4 +189,8 @@ return
 
 <MSO_MaximizeWin>:
 
+return
+
+<MSO_CopySelectedEmailFromMainOutlookWindow>:
+    send, ^c
 return
