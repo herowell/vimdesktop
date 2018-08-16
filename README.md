@@ -3,7 +3,9 @@
 
 Update History by Lu Da Jun
 
-- Aug. 17 2018: MSO_CopySelectedEmailFromMainOutlookWindow added
+- Aug. 17 2018: 
+    - MSO_CopySelectedEmailFromMainOutlookWindow added
+    - Modify the function of key h, j to support move left and right when composing email
 - Aug. 13 2018: 
     - Add fv key binding to paste from clipboard
         - Using fv when composing new email will paste from clipboard

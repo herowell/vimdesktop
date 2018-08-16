@@ -16,8 +16,10 @@ MicrosoftOutlook:
     vim.comment("<MSO_PasteFromClipboard>", "Paste from clipboard")
     vim.comment("<MSO_Forward>", "Forward selected mail")
     vim.comment("<MSO_Send>", "Send composing mail")
+    vim.comment("<MSO_CopySelectedEmailFromMainOutlookWindow>", "Copy selected email in main Outlook window")
 
     vim.mode("insert", MSOutlook)
+
     vim.map("<esc>", "<MSO_NormalMode>", MSOutlook)
 
     vim.mode("normal", MSOutlook)
@@ -29,10 +31,10 @@ MicrosoftOutlook:
     vim.map("sd", "<MSO_Sort_By_Date>", MSOutlook)
     vim.map("se", "<MSO_Send>", MSOutlook)
 
-    vim.map("h", "<MSO_FirstMail>", MSOutlook)
+    vim.map("h", "<Mso_FirstMailOrMoveLeft>", MSOutlook)
     vim.map("j", "<MSO_Down>", MSOutlook)
     vim.map("k", "<MSO_Up>", MSOutlook)
-    vim.map("l", "<MSO_LastMail>", MSOutlook)
+    vim.map("l", "<MSO_LastMailOrMoveRight>", MSOutlook)
     vim.map("[", "<MSO_NextItem>", MSOutlook)
     vim.map("]", "<MSO_PreviousItem>", MSOutlook)
     
@@ -117,8 +119,13 @@ return
     vim.mode("insert", MSOutlook)
 return
 
-<MSO_FirstMail>:
-    Send, {Home}
+<Mso_FirstMailOrMoveLeft>:
+    if MSO_Is_Email_Open(){
+        Send, {Left}
+    }
+    else{
+        Send, {Home}
+    }
 return
 
 <MSO_Up>:
@@ -129,8 +136,13 @@ return
     Send, {Down}
 return
 
-<MSO_LastMail>:
-    Send, {End}
+<MSO_LastMailOrMoveRight>:
+    if MSO_Is_Email_Open(){
+        Send, {Right}
+    }
+    else{
+        Send, {End}
+    }
 return
 
 <MSO_NextItem>:
