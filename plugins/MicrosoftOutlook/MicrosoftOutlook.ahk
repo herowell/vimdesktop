@@ -54,6 +54,7 @@ MicrosoftOutlook:
     vim.map("U", "<MSO_MarkRead>", MSOutlook)
 
     vim.map("m", "<MSO_MaximizeWin>", MSOutlook)
+    vim.map("M", "<MSO_RestoreWin>", MSOutlook)
     ;add maximum/normal/minimum/..
 
     ;Using fv when composing new email will paste from clipboard
@@ -200,7 +201,11 @@ return
 return
 
 <MSO_MaximizeWin>:
+    PostMessage, 0x112, 0xF030,,, A,  ; 0x112 = WM_SYSCOMMAND, 0xF030 = SC_MAXIMIZE;for active window
+return
 
+<MSO_RestoreWin>:
+    PostMessage, 0x112, 0xF120,,, A,  ; 0x112 = WM_SYSCOMMAND, 0xF030 = SC_MAXIMIZE;for active window
 return
 
 <MSO_CopySelectedEmailFromMainOutlookWindow>:
