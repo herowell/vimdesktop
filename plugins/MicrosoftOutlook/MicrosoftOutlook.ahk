@@ -55,7 +55,6 @@ MicrosoftOutlook:
 
     vim.map("m", "<MSO_MaximizeWin>", MSOutlook)
     vim.map("M", "<MSO_RestoreWin>", MSOutlook)
-    ;add maximum/normal/minimum/..
 
     ;Using fv when composing new email will paste from clipboard
     ;It would be useful to use fv in main Outlook window if you have already copied some attachments into clipboard
