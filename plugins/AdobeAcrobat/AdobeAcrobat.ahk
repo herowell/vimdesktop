@@ -1,12 +1,10 @@
-;Tested for Outlook 2016
-;Referenced Gmail keys for Outlook 2016 version 4.0 by Myrick
+;Tested for Acrobat Reader DC 
 ;By Lu Da Jun
 
 
 AdobeAcrobat:
     AdobeAcrobat := "AdobeAcrobat"
     AdobeAcrobat_Cls_Name := "AcrobatSDIWindow"
-    cur_view := 0
 
     vim.SetWin(AdobeAcrobat, AdobeAcrobat_Cls_Name)
 
@@ -21,6 +19,7 @@ AdobeAcrobat:
     vim.map("M", "<Adobe_RestoreWin>", AdobeAcrobat)
 
     vim.map("t", "<Adobe_ToggleToolsPane>", AdobeAcrobat)
+    vim.map("T", "<Adobe_ToggleNavigationPane>", AdobeAcrobat)
 
     vim.map("v", "<Adobe_ToggleView>", AdobeAcrobat)
 return
@@ -57,9 +56,17 @@ return
     Send, +{F4}
 return
 
+<Adobe_ToggleNavigationPane>:
+    Send, {F4}
+return
+
 <Adobe_ToggleView>:
-    global cur_view
-    ;static cur_view := 0
+    Adobe_Toggle_View()
+return
+
+Adobe_Toggle_View()
+{
+    static cur_view := 0
     IfEqual, cur_view, 0, Send, ^0
     IfEqual, cur_view, 1, Send, ^1
     IfEqual, cur_view, 2, Send, ^2
@@ -67,5 +74,4 @@ return
     if (cur_view = 3){
         cur_view := 0
     }
-return
-
+}
