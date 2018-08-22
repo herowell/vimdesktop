@@ -3,6 +3,7 @@
 
 Update History by Lu Da Jun
 
+- Aug. 22 2018: Simple Adobe Acrobat Reader DC support added
 - Aug. 20 2018: Maximize & Restore window added
 - Aug. 17 2018: 
     - MSO_CopySelectedEmailFromMainOutlookWindow added

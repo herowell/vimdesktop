@@ -1,4 +1,5 @@
-﻿#include *i %A_ScriptDir%\plugins\BeyondCompare4\BeyondCompare4.ahk
+﻿#include *i %A_ScriptDir%\plugins\AdobeAcrobat\AdobeAcrobat.ahk
+#include *i %A_ScriptDir%\plugins\BeyondCompare4\BeyondCompare4.ahk
 #include *i %A_ScriptDir%\plugins\Explorer\Explorer.ahk
 #include *i %A_ScriptDir%\plugins\Foobar2000\Foobar2000.ahk
 #include *i %A_ScriptDir%\plugins\General\General.ahk
@@ -10,12 +11,13 @@
 #include *i %A_ScriptDir%\plugins\WinMerge\WinMerge.ahk
 /*
 [ExtensionsTime]
+AdobeAcrobat=20180822111836
 BeyondCompare4=20180812121208
 Explorer=20180812121208
 Foobar2000=20180812121208
-General=20180812121208
+General=20180817003754
 MicrosoftExcel=20180812121208
-MicrosoftOutlook=20180813122837
+MicrosoftOutlook=20180820004005
 TCCompare=20180812121208
 TCDialog=20180812121208
 TotalCommander=20180813120313
