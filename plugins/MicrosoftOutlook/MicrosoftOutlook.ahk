@@ -50,8 +50,8 @@ MicrosoftOutlook:
     vim.map("x", "<MSO_Delete>", MSOutlook)
     vim.map("X", "<MSO_PermanentDelete>", MSOutlook)
 
-    vim.map("u", "<MSO_MarkUnread>", MSOutlook)
-    vim.map("U", "<MSO_MarkRead>", MSOutlook)
+    vim.map("r", "<MSO_MarkUnread>", MSOutlook)
+    vim.map("R", "<MSO_MarkRead>", MSOutlook)
 
     vim.map("m", "<MSO_MaximizeWin>", MSOutlook)
     vim.map("M", "<MSO_RestoreWin>", MSOutlook)
