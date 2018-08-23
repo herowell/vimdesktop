@@ -23,7 +23,7 @@ AdobeAcrobat:
 
     vim.map("v", "<Adobe_ToggleView>", AdobeAcrobat) 
     
-    vim.map("cc", "<Adobe_Close>", AdobeAcrobat)
+    vim.map("cc", "<Adobe_Exit>", AdobeAcrobat)
 return
 
 <Adobe_NormalMode>:
@@ -78,6 +78,6 @@ Adobe_Toggle_View()
     }
 }
 
-<Adobe_Close>:
+<Adobe_Exit>:
     Send, ^q
 return
