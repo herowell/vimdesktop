@@ -15,7 +15,7 @@ MicrosoftOutlook:
     vim.comment("<MSO_Sort_By_Date>", "Sort emails by date")
     vim.comment("<MSO_PasteFromClipboard>", "Paste from clipboard")
     vim.comment("<MSO_Forward>", "Forward selected mail")
-    vim.comment("<MSO_Send>", "Send composing mail")
+    vim.comment("<MSO_Send>", "Send composed mail")
     vim.comment("<MSO_CopySelectedEmailFromMainOutlookWindow>", "Copy selected email in main Outlook window")
 
     vim.mode("insert", MSOutlook)
@@ -81,7 +81,13 @@ MSOutlook_Force_Insert_Mode()
 MSO_Is_Email_Open()
 {
     ControlGetFocus, ctrl, AHK_CLASS rctrl_renwnd32
-    if RegExMatch(ctrl, "_WwG1")
+    if RegExMatch(ctrl, "_WwG1") 
+        return true
+    if RegExMatch(ctrl, "RichEdit20WPT2") 
+        return true
+    if RegExMatch(ctrl, "RichEdit20WPT3") 
+        return true
+    if RegExMatch(ctrl, "RichEdit20WPT5") 
         return true
     return false
 }

@@ -35,11 +35,11 @@ return
 return
 
 <Adobe_Up>:
-    Send, {Up}
+    Send, {Left}
 return
 
 <Adobe_Down>:
-    Send, {Down}
+    Send, {Right}
 return
 
 <Adobe_LastPage>:
