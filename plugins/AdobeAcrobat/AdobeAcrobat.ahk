@@ -21,7 +21,9 @@ AdobeAcrobat:
     vim.map("t", "<Adobe_ToggleToolsPane>", AdobeAcrobat)
     vim.map("T", "<Adobe_ToggleNavigationPane>", AdobeAcrobat)
 
-    vim.map("v", "<Adobe_ToggleView>", AdobeAcrobat)
+    vim.map("v", "<Adobe_ToggleView>", AdobeAcrobat) 
+    
+    vim.map("cc", "<Adobe_Close>", AdobeAcrobat)
 return
 
 <Adobe_NormalMode>:
@@ -75,3 +77,7 @@ Adobe_Toggle_View()
         cur_view := 0
     }
 }
+
+<Adobe_Close>:
+    Send, ^q
+return
