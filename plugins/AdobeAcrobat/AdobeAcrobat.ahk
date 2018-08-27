@@ -8,7 +8,12 @@ AdobeAcrobat:
 
     vim.SetWin(AdobeAcrobat, AdobeAcrobat_Cls_Name)
 
+    ;Insert mode required to enable search in pdf
+    vim.mode("insert", AdobeAcrobat)
+    vim.map("<esc>", "<Adobe_NormalMode>", AdobeAcrobat)
+
     vim.mode("normal", AdobeAcrobat)
+    vim.map("i", "<Adobe_InsertMode>", AdobeAcrobat)
 
     vim.map("h", "<Adobe_HomePage>", AdobeAcrobat)
     vim.map("j", "<Adobe_Down>", AdobeAcrobat)
@@ -28,6 +33,10 @@ return
 
 <Adobe_NormalMode>:
     vim.mode("normal", AdobeAcrobat)
+return
+
+<Adobe_InsertMode>:
+    vim.mode("insert", AdobeAcrobat)
 return
 
 <Adobe_HomePage>:
