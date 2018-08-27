@@ -4,7 +4,7 @@
 Update History by Lu Da Jun
 
 - Aug. 22 2018: Simple Adobe Acrobat Reader DC support added
-- Aug. 20 2018: Maximize & Restore window added
+- Aug. 20 2018: Maximize & Restore window for Outlook added
 - Aug. 17 2018: 
     - MSO_CopySelectedEmailFromMainOutlookWindow added
     - Modify the function of key h, j to support move left and right when composing email
