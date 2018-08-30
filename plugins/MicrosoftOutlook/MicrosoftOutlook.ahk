@@ -21,6 +21,7 @@ MicrosoftOutlook:
     vim.mode("insert", MSOutlook)
 
     vim.map("<esc>", "<MSO_NormalMode>", MSOutlook)
+    vim.map("^[", "<MSO_NormalMode>", msoutlook)
 
     vim.mode("normal", MSOutlook)
 
@@ -68,6 +69,8 @@ MicrosoftOutlook:
     ;vim.BeforeActionDo("MSOutlook_Force_Insert_Mode", MSOutlook)
 
     vim.map("ff", "<MSO_CopySelectedEmailFromMainOutlookWindow>", MSOutlook)
+
+    vim.map("``", "<MSO_ToggleShowInfo>", MSOutlook)
 return
 
 MSOutlook_Force_Insert_Mode()
@@ -215,4 +218,8 @@ return
 
 <MSO_CopySelectedEmailFromMainOutlookWindow>:
     send, ^c
+return
+
+<MSO_ToggleShowInfo>:
+    vim.GetWin(MSOutlook).SetInfo(!vim.GetWin(MSOutlook).info)
 return
