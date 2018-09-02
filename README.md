@@ -3,7 +3,7 @@
 
 Update History by Lu Da Jun
 
-- Sep. 02 2018: Resolve the problem that can not input upper letters when CapsLock is on for Outlook and Excel 2016
+- Sep. 02 2018: Pending issue that can not input upper letters when CapsLock is on and using Microsoft Wubi 
 - Aug. 22 2018: Simple Adobe Acrobat Reader DC support added
 - Aug. 20 2018: Maximize & Restore window for Outlook added
 - Aug. 17 2018: 
