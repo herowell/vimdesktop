@@ -281,6 +281,8 @@ MicrosoftExcel_BeforeActionDo()
 
     If RegExMatch(ctrl, "EXCEL61")
         Return True
+    If RegExMatch(ctrl, "EXCEL71")  ;add support for excel 2016
+        Return True
     return False
 }
 
