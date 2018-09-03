@@ -164,12 +164,12 @@ return
 
 <MSO_NextItem>:
     if MSO_Is_Email_Open()
-        Send, ^.
+        Send, ^>
 return
 
 <MSO_PreviousItem>:
     if MSO_Is_Email_Open()
-        Send, ^,
+        Send, ^<
 return
 
 <MSO_Open>:
