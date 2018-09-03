@@ -1,4 +1,5 @@
-﻿MicrosoftExcel:
+﻿;update my Lu Da Jun
+MicrosoftExcel:
     global Workbook
     global excel
     global Sheet
@@ -141,7 +142,7 @@
     vim.map("P", "<MSE_Paste_Select>", MSExcel)
 
     ;pv希望以后用代码做，快捷键做会闪一下
-    ;vim.map("v", "<MSE_Paste_Value>", MSExcel)
+    vim.map("v", "<MSE_Paste_Value>", MSExcel)
 
     ;space翻页（PageUp）Shiht-space（PageDown）
     vim.map("<space>", "<MSE_PageDown>", MSExcel)
@@ -296,7 +297,7 @@ return
     vim.Mode("insert", MSExcel)
 
     ;插入模式下使用由Excel接管状态栏
-    getExcel().Application.StatusBar := blank
+    getExcel().Application.StatusBar := "Insert Mode"
 return
 
 <Alt_Mode_MicrosoftExcel>:
@@ -1941,12 +1942,11 @@ MSE_CustomAutoFilter(ArithmeticOpr,CurrentValue)
 }
 
 ;===================================================================
-;直接获取Excel
+;update my Lu Da Jun
 getExcel()
 {
-    try xls := ComObjActive("Excel.Application") ;handle to running application
+    try xls := ComObjActive("Excel.Application") 
     Catch {
-        MsgBox % "no existing Excl ojbect:  Need to create one"
         xls := ComObjCreate("Excel.Application")
     }
     return xls
