@@ -29,6 +29,7 @@ AdobeAcrobat:
     vim.map("v", "<Adobe_ToggleView>", AdobeAcrobat) 
     
     vim.map("cc", "<Adobe_Exit>", AdobeAcrobat)
+    vim.map("r", "<Adobe_RotateClockwise>", AdobeAcrobat)
 return
 
 <Adobe_NormalMode>:
@@ -89,4 +90,8 @@ Adobe_Toggle_View()
 
 <Adobe_Exit>:
     Send, ^q
+return
+
+<Adobe_RotateClockwise>:
+    Send, +^{+}
 return
