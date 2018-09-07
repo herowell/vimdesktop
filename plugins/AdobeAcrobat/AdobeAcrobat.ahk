@@ -79,7 +79,7 @@ return
 Adobe_Toggle_View()
 {
     static cur_view := 0
-    IfEqual, cur_view, 0, Send, ^0
+    IfEqual, cur_view, 0, Send, ^0 ; zoom to page level; fit one full page to window
     IfEqual, cur_view, 1, Send, ^1
     IfEqual, cur_view, 2, Send, ^2
     cur_view += 1

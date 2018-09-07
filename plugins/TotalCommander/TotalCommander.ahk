@@ -242,8 +242,9 @@
     vim.map("x", "<cm_Delete>", "TTOTAL_CMD")
     vim.map("X", "<TC_ForceDelete>", "TTOTAL_CMD")
     vim.map("w", "<cm_List>", "TTOTAL_CMD")
-    vim.map("y", "<cm_CopyNamesToClip>", "TTOTAL_CMD")
-    vim.map("Y", "<cm_CopyFullNamesToClip>", "TTOTAL_CMD")
+    vim.map("y", "<cm_CopyNameWOExtToClip>", "TTOTAL_CMD")
+    vim.map("Y", "<cm_CopyNamesToClip>", "TTOTAL_CMD")
+    ;vim.map("Y", "<cm_CopyFullNamesToClip>", "TTOTAL_CMD")
     vim.map("P", "<cm_PackFiles>", "TTOTAL_CMD")
     vim.map("p", "<cm_UnpackFiles>", "TTOTAL_CMD")
     vim.map("t", "<cm_OpenNewTab>", "TTOTAL_CMD")
@@ -2797,6 +2798,8 @@ return
 ;<cm_RenameOnly>: >>重命名(Shift+F6){{{2
 <cm_RenameOnly>:
     SendPos(1002)
+    ;Send, {End}
+
 return
 ;<cm_RenameSingleFile>: >>重命名当前文件{{{2
 <cm_RenameSingleFile>:
@@ -3297,6 +3300,12 @@ return
 ;<cm_CopyNamesToClip>: >>复制文件名{{{2
 <cm_CopyNamesToClip>:
     SendPos(2017)
+return
+
+<cm_CopyNameWOExtToClip>:
+    SendPos(1002)
+    Send, ^c
+    Send, {Esc}
 return
 ;<cm_CopyFullNamesToClip>: >>复制文件名及完整路径{{{2
 <cm_CopyFullNamesToClip>:
