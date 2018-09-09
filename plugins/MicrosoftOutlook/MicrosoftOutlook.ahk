@@ -66,7 +66,7 @@ MicrosoftOutlook:
 
     ;Force insert mode shall be disabled in order to use "fv" key binding
     ;Otherwise you can not return back to normal mode due to <esc> will close current email window by default
-    ;vim.BeforeActionDo("MSOutlook_Force_Insert_Mode", MSOutlook)
+    ;vim.BeforeActionDo("MSO_ForceInsertMode", MSOutlook)
 
     vim.map("ff", "<MSO_CopySelectedEmailFromMainOutlookWindow>", MSOutlook)
 
@@ -78,10 +78,12 @@ return
 ;Currently to resolve the problem that can not input upper case letters in insert mode
 MSO_BeforeActionDo()
 {
-    MSO_Is_Email_Open()
+    EmailOPen := MSO_Is_Email_Open()
+    ;facilitate ESC to switch input to EN 
+    Send, {Shift}
 }
 
-MSOutlook_Force_Insert_Mode()
+MSO_ForceInsertMode()
 {
     ControlGetFocus, ctrl, AHK_CLASS rctrl_renwnd32
     if RegExMatch(ctrl, "_WwG1")

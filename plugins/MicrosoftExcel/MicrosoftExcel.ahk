@@ -19,8 +19,8 @@ MicrosoftExcel:
 
     vim.SetWin(MSExcel, "XLMAIN")
 
-    vim.comment("<Insert_Mode_MicrosoftExcel>", "insert模式")
-    vim.comment("<Normal_Mode_MicrosoftExcel>", "normal模式")
+    vim.comment("<MSE_InsertMode>", "insert模式")
+    vim.comment("<MSE_NormalMode>", "normal模式")
     vim.comment("<MSE_SheetReName>", "重命名当前工作表名称")
     vim.comment("<MSE_GoTo>", "跳转到指定行列值的表格")
     vim.comment("<MSE_SaveAndExit>", "保存并退出")
@@ -28,7 +28,7 @@ MicrosoftExcel:
     vim.comment("<MSE_Undo>", "撤销")
     vim.comment("<MSE_Redo>", "重做")
     vim.comment("<MSE_SaveAndExit>", "保存后退出")
-    vim.comment("<MSE_DiscardAndExit>", "不保存退出")
+    ;vim.comment("<MSE_DiscardAndExit>", "不保存退出")
     vim.comment("<MSE_Color_Font>", "设置选中区域字体为上次颜色")
     vim.comment("<MSE_Color_Cell>", "填充选中表格背景为上次颜色")
     vim.comment("<MSE_Color_All>", "同时应用字体颜色、背景颜色")
@@ -56,17 +56,17 @@ MicrosoftExcel:
     vim.comment("<MSE_Cut>", "剪切")
     vim.comment("<MSE_Replace>", "替换")
     vim.comment("<MSE_Find>", "查找")
-    vim.comment("<Alt_Mode_MicrosoftExcel>", "alt命令模式")
+    vim.comment("<MSE_AltMode>", "alt命令模式")
 
     ;insert模式及快捷键
     vim.mode("insert", MSExcel)
-    vim.map("<esc>", "<Normal_Mode_MicrosoftExcel>", MSExcel)
+    vim.map("<esc>", "<MSE_NormalMode>", MSExcel)
 
     ;normal模式及快捷键
     vim.mode("normal", MSExcel)
-    vim.map("i", "<Insert_Mode_MicrosoftExcel>", MSExcel)
-    vim.map("<esc>", "<Normal_Mode_MicrosoftExcel>", MSExcel)
-    vim.map("I", "<Alt_Mode_MicrosoftExcel>", MSExcel)
+    vim.map("i", "<MSE_InsertMode>", MSExcel)
+    vim.map("<esc>", "<MSE_NormalMode>", MSExcel)
+    vim.map("I", "<MSE_AltMode>", MSExcel)
 
     ;数字计数
     vim.map("1", "<1>", MSExcel)
@@ -286,25 +286,25 @@ MSE_BeforeActionDo()
     return False
 }
 
-<Normal_Mode_MicrosoftExcel>:
+<MSE_NormalMode>:
     Send, {esc}
     vim.Mode("normal", MSExcel)
     getExcel().Application.StatusBar := "Normal Mode"
     
 return
 
-<Insert_Mode_MicrosoftExcel>:
+<MSE_InsertMode>:
     vim.Mode("insert", MSExcel)
 
     ;插入模式下使用由Excel接管状态栏
     getExcel().Application.StatusBar := "Insert Mode"
 return
 
-<Alt_Mode_MicrosoftExcel>:
+<MSE_AltMode>:
     vim.Mode("insert", MSExcel)
 
     ;插入模式下使用由Excel接管状态栏
-    getExcel().Application.StatusBar := blank
+    getExcel().Application.StatusBar := "Alt Mode"
     {
         send {alt}
         return

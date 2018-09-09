@@ -2798,8 +2798,7 @@ return
 ;<cm_RenameOnly>: >>重命名(Shift+F6){{{2
 <cm_RenameOnly>:
     SendPos(1002)
-    ;Send, {End}
-
+    Send, {Right}
 return
 ;<cm_RenameSingleFile>: >>重命名当前文件{{{2
 <cm_RenameSingleFile>:
