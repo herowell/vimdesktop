@@ -9,16 +9,16 @@ WinDesktop:
 
     vim.mode("normal", WDTP)
     vim.map("i", "<WDTP_InsertMode>", WDTP)
-    vim.map("ff", "<WDTP_Copy>", WDTP)
-    vim.map("fx", "<WDTP_Move>", WDTP)
-    vim.map("fv", "<WDTP_Paste>", WDTP)
-    vim.map("r", "<WDTP_Rename>", WDTP)
-    vim.map("x", "<WDTP_Delete>", WDTP)
     vim.map("h", "<WDTP_Home>", WDTP)
     vim.map("j", "<WDTP_Down>", WDTP)
     vim.map("k", "<WDTP_Up>", WDTP)
     vim.map("l", "<WDTP_Open>", WDTP)
 
+    vim.map("ff", "<WDTP_Copy>", WDTP)
+    vim.map("fx", "<WDTP_Move>", WDTP)
+    vim.map("fv", "<WDTP_Paste>", WDTP)
+    vim.map("r", "<WDTP_Rename>", WDTP)
+    vim.map("x", "<WDTP_Delete>", WDTP)
 Return
 
 <WDTP_Copy>:
