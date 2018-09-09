@@ -2,6 +2,7 @@
 ;Referenced Gmail keys for Outlook 2016 version 4.0 by Myrick
 ;By Lu Da Jun
 
+#Include *i %A_ScriptDir%\lib\IME_Mode.ahk
 
 MicrosoftOutlook:
     MSOutlook := "MicrosoftOutlook"
@@ -79,8 +80,15 @@ return
 MSO_BeforeActionDo()
 {
     EmailOPen := MSO_Is_Email_Open()
-    ;facilitate ESC to switch input to EN 
-    Send, {Shift}
+}
+
+MSO_ChangeIMEToEn()
+{
+    ;Facilitate searching using EN instead CHN
+    if (IME_GetConvMode() = 1025)
+    {
+        Send, {Shift}
+    }
 }
 
 MSO_ForceInsertMode()
@@ -88,6 +96,7 @@ MSO_ForceInsertMode()
     ControlGetFocus, ctrl, AHK_CLASS rctrl_renwnd32
     if RegExMatch(ctrl, "_WwG1")
         return true
+    
     return false
 }
 
@@ -111,14 +120,17 @@ Return
 
 <MSO_Sort_By_Sender>:
     Send, !vabf
+    MSO_ChangeIMEToEn()
 Return
 
 <MSO_Sort_By_Recipient>:
     Send, !vabt
+    MSO_ChangeIMEToEn()
 Return
 
 <MSO_Sort_By_Subject>:
     Send, !vabj
+    MSO_ChangeIMEToEn()
 Return
 
 <MSO_Send>:
