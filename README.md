@@ -3,6 +3,7 @@
 
 Update History by Lu Da Jun
 
+- Sep. 09 2018: Adding basic support for Windows Desktop
 - Sep. 02 2018: Pending issue that can not input upper letters when CapsLock is on and using Microsoft Wubi 
 - Aug. 22 2018: Simple Adobe Acrobat Reader DC support added
 - Aug. 20 2018: Maximize & Restore window for Outlook added

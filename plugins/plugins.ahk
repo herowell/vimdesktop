@@ -8,18 +8,20 @@
 #include *i %A_ScriptDir%\plugins\TCCompare\TCCompare.ahk
 #include *i %A_ScriptDir%\plugins\TCDialog\TCDialog.ahk
 #include *i %A_ScriptDir%\plugins\TotalCommander\TotalCommander.ahk
+#include *i %A_ScriptDir%\plugins\WinDesktop\WinDesktop.ahk
 #include *i %A_ScriptDir%\plugins\WinMerge\WinMerge.ahk
 /*
 [ExtensionsTime]
-AdobeAcrobat=20180822111836
+AdobeAcrobat=20180905133251
 BeyondCompare4=20180812121208
 Explorer=20180812121208
 Foobar2000=20180812121208
-General=20180817003754
-MicrosoftExcel=20180812121208
-MicrosoftOutlook=20180820004005
+General=20180902190620
+MicrosoftExcel=20180907202434
+MicrosoftOutlook=20180909173745
 TCCompare=20180812121208
 TCDialog=20180812121208
-TotalCommander=20180813120313
+TotalCommander=20180907174748
+WinDesktop=20180909175516
 WinMerge=20180812121208
 */
