@@ -14,6 +14,10 @@ WinDesktop:
     vim.map("fv", "<WDTP_Paste>", WDTP)
     vim.map("r", "<WDTP_Rename>", WDTP)
     vim.map("x", "<WDTP_Delete>", WDTP)
+    vim.map("h", "<WDTP_Home>", WDTP)
+    vim.map("j", "<WDTP_Down>", WDTP)
+    vim.map("k", "<WDTP_Up>", WDTP)
+    vim.map("l", "<WDTP_Open>", WDTP)
 
 Return
 
@@ -43,4 +47,20 @@ Return
 
 <WDTP_InsertMode>:
     vim.mode("insert", WDTP)
+Return
+
+<WDTP_Home>:
+    Send, {Home} 
+Return
+
+<WDTP_Up>:
+    Send, {Up} 
+Return
+
+<WDTP_Down>:
+    Send, {Down}
+Return
+
+<WDTP_Open>:
+    Send, {Enter} 
 Return
