@@ -76,10 +76,9 @@ MicrosoftOutlook:
     vim.BeforeActionDo("MSO_BeforeActionDo", MSOutlook)
 return
 
-;Currently to resolve the problem that can not input upper case letters in insert mode
 MSO_BeforeActionDo()
 {
-    EmailOPen := MSO_IsEmailOpen()
+    ;MSO_IsEmailOpen()
 }
 
 MSO_ChangeIMEToEn()
