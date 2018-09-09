@@ -10,10 +10,10 @@ MicrosoftOutlook:
 
     vim.SetWin(MSOutlook, MSOutlook_Cls_Name)
 
-    vim.comment("<MSO_Sort_By_Sender>", "Sort emails by sender")
-    vim.comment("<MSO_Sort_By_Recipient>", "Sort emails by recipient")
-    vim.comment("<MSO_Sort_By_Subject>", "Sort emails by subject")
-    vim.comment("<MSO_Sort_By_Date>", "Sort emails by date")
+    vim.comment("<MSO_SortBySender>", "Sort emails by sender")
+    vim.comment("<MSO_SortByRecipient>", "Sort emails by recipient")
+    vim.comment("<MSO_SortBySubject>", "Sort emails by subject")
+    vim.comment("<MSO_SortByDate>", "Sort emails by date")
     vim.comment("<MSO_PasteFromClipboard>", "Paste from clipboard")
     vim.comment("<MSO_Forward>", "Forward selected mail")
     vim.comment("<MSO_Send>", "Send composed mail")
@@ -27,10 +27,10 @@ MicrosoftOutlook:
     vim.mode("normal", MSOutlook)
 
     vim.map("i", "<MSO_InsertMode>", MSOutlook)
-    vim.map("sa", "<MSO_Sort_By_Sender>", MSOutlook)
-    vim.map("sr", "<MSO_Sort_By_Recipient>", MSOutlook)
-    vim.map("ss", "<MSO_Sort_By_Subject>", MSOutlook)
-    vim.map("sd", "<MSO_Sort_By_Date>", MSOutlook)
+    vim.map("sa", "<MSO_SortBySender>", MSOutlook)
+    vim.map("sr", "<MSO_SortByRecipient>", MSOutlook)
+    vim.map("ss", "<MSO_SortBySubject>", MSOutlook)
+    vim.map("sd", "<MSO_SortByDate>", MSOutlook)
     vim.map("se", "<MSO_Send>", MSOutlook)
 
     vim.map("h", "<Mso_FirstMailOrMoveLeft>", MSOutlook)
@@ -79,13 +79,13 @@ return
 ;Currently to resolve the problem that can not input upper case letters in insert mode
 MSO_BeforeActionDo()
 {
-    EmailOPen := MSO_Is_Email_Open()
+    EmailOPen := MSO_IsEmailOpen()
 }
 
 MSO_ChangeIMEToEn()
 {
     ;Facilitate searching using EN instead CHN
-    if (IME_GetConvMode() = 1025)
+    if (IME_GetConvMode() = 1025) ;tested with Baidu Wubi
     {
         Send, {Shift}
     }
@@ -100,7 +100,7 @@ MSO_ForceInsertMode()
     return false
 }
 
-MSO_Is_Email_Open()
+MSO_IsEmailOpen()
 {
     ControlGetFocus, ctrl, AHK_CLASS rctrl_renwnd32
     if RegExMatch(ctrl, "_WwG1") 
@@ -114,27 +114,27 @@ MSO_Is_Email_Open()
     return false
 }
 
-<MSO_Sort_By_Date>:
+<MSO_SortByDate>:
     Send, !vabd
 Return
 
-<MSO_Sort_By_Sender>:
+<MSO_SortBySender>:
     Send, !vabf
     MSO_ChangeIMEToEn()
 Return
 
-<MSO_Sort_By_Recipient>:
+<MSO_SortByRecipient>:
     Send, !vabt
     MSO_ChangeIMEToEn()
 Return
 
-<MSO_Sort_By_Subject>:
+<MSO_SortBySubject>:
     Send, !vabj
     MSO_ChangeIMEToEn()
 Return
 
 <MSO_Send>:
-    if MSO_Is_Email_Open()
+    if MSO_IsEmailOpen()
         Send, !s
 Return
 
@@ -151,7 +151,7 @@ return
 return
 
 <Mso_FirstMailOrMoveLeft>:
-    if MSO_Is_Email_Open(){
+    if MSO_IsEmailOpen(){
         Send, {Left}
     }
     else{
@@ -168,7 +168,7 @@ return
 return
 
 <MSO_LastMailOrMoveRight>:
-    if MSO_Is_Email_Open(){
+    if MSO_IsEmailOpen(){
         Send, {Right}
     }
     else{
@@ -177,12 +177,12 @@ return
 return
 
 <MSO_NextItem>:
-    if MSO_Is_Email_Open()
+    if MSO_IsEmailOpen()
         Send, ^>
 return
 
 <MSO_PreviousItem>:
-    if MSO_Is_Email_Open()
+    if MSO_IsEmailOpen()
         Send, ^<
 return
 
