@@ -35,6 +35,7 @@ Return
 
 <WDTP_Rename>:
     Send, {F2} 
+    vim.mode("insert", WDTP)
 Return
 
 <WDTP_Delete>:

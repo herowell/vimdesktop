@@ -121,16 +121,19 @@ Return
 <MSO_SortBySender>:
     Send, !vabf
     MSO_ChangeIMEToEn()
+    vim.mode("insert", MSOutlook)
 Return
 
 <MSO_SortByRecipient>:
     Send, !vabt
     MSO_ChangeIMEToEn()
+    vim.mode("insert", MSOutlook)
 Return
 
 <MSO_SortBySubject>:
     Send, !vabj
     MSO_ChangeIMEToEn()
+    vim.mode("insert", MSOutlook)
 Return
 
 <MSO_Send>:
