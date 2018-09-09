@@ -2,7 +2,7 @@
 ;Referenced Gmail keys for Outlook 2016 version 4.0 by Myrick
 ;By Lu Da Jun
 
-#Include *i %A_ScriptDir%\lib\IME_Mode.ahk
+#Include *i %A_ScriptDir%\lib\IME.ahk
 
 MicrosoftOutlook:
     MSOutlook := "MicrosoftOutlook"
@@ -115,6 +115,7 @@ MSO_IsEmailOpen()
 
 <MSO_SortByDate>:
     Send, !vabd
+    MSO_ChangeIMEToEn()
 Return
 
 <MSO_SortBySender>:
