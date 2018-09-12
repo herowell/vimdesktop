@@ -218,7 +218,7 @@ return
 return
 
 <MSO_Delete>:
-    MsgBox, 49, VIMDesktop-Outlook Confirm Dialog, Do you want to continue? 
+    MsgBox, 4149, VIMDesktop-Outlook Confirm Dialog, Do you want to continue? 
     IfMsgBox Cancel 
         return
     Send, {Delete} 

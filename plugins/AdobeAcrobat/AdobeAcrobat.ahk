@@ -27,6 +27,8 @@ AdobeAcrobat:
     vim.map("T", "<Adobe_ToggleNavigationPane>", AdobeAcrobat)
 
     vim.map("v", "<Adobe_ToggleView>", AdobeAcrobat) 
+    vim.map("d", "<Adobe_DoubleView>", AdobeAcrobat) 
+    vim.map("s", "<Adobe_SingleView>", AdobeAcrobat) 
     
     vim.map("cc", "<Adobe_Exit>", AdobeAcrobat)
     vim.map("r", "<Adobe_RotateClockwise>", AdobeAcrobat)
@@ -76,16 +78,25 @@ return
     Adobe_Toggle_View()
 return
 
+<Adobe_DoubleView>:
+    Send, !vpp
+return
+
+<Adobe_SingleView>:
+    Send, !vps
+return
+
 Adobe_Toggle_View()
 {
-    static cur_view := 0
-    IfEqual, cur_view, 0, Send, ^0 ; zoom to page level; fit one full page to window
-    IfEqual, cur_view, 1, Send, ^1
-    IfEqual, cur_view, 2, Send, ^2
-    cur_view += 1
-    if (cur_view = 3){
-        cur_view := 0
-    }
+    Send, ^0
+    ;static cur_view := 0
+    ;IfEqual, cur_view, 0, Send, ^0 ; zoom to page level; fit one full page to window
+    ;IfEqual, cur_view, 1, Send, ^1
+    ;IfEqual, cur_view, 2, Send, ^2
+    ;cur_view += 1
+    ;if (cur_view = 3){
+    ;    cur_view := 0
+    ;}
 }
 
 <Adobe_Exit>:

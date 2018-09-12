@@ -228,7 +228,9 @@
     vim.map("D", "<cm_OpenDesktop>", "TTOTAL_CMD")
     vim.map("e", "<cm_ContextMenu>", "TTOTAL_CMD")
     vim.map("E", "<cm_ExecuteDOS>", "TTOTAL_CMD")
-    vim.map("n", "<TC_azHistory>", "TTOTAL_CMD")
+    ;update by ldj
+    ;vim.map("n", "<TC_azHistory>", "TTOTAL_CMD")
+    vim.map("n", "<cm_EditName>", "TTOTAL_CMD")
     vim.map("m", "<TC_Mark>", "TTOTAL_CMD")
     vim.map("M", "<TC_Half>", "TTOTAL_CMD")
     vim.map("'", "<TC_ListMark>", "TTOTAL_CMD")
@@ -242,6 +244,7 @@
     vim.map("x", "<cm_Delete>", "TTOTAL_CMD")
     vim.map("X", "<TC_ForceDelete>", "TTOTAL_CMD")
     vim.map("w", "<cm_List>", "TTOTAL_CMD")
+    ;updated by ldj
     vim.map("y", "<cm_CopyNameWOExtToClip>", "TTOTAL_CMD")
     vim.map("Y", "<cm_CopyNamesToClip>", "TTOTAL_CMD")
     ;vim.map("Y", "<cm_CopyFullNamesToClip>", "TTOTAL_CMD")
@@ -2797,6 +2800,10 @@ return
 return
 ;<cm_RenameOnly>: >>重命名(Shift+F6){{{2
 <cm_RenameOnly>:
+    SendPos(1002)
+return
+
+<cm_EditName>:
     SendPos(1002)
     Send, {Right}
 return
