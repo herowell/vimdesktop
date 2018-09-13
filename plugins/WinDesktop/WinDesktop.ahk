@@ -15,7 +15,7 @@ WinDesktop:
     vim.map("l", "<WDTP_Open>", WDTP)
 
     vim.map("ff", "<WDTP_Copy>", WDTP)
-    vim.map("fx", "<WDTP_Move>", WDTP)
+    vim.map("fz", "<WDTP_Move>", WDTP)
     vim.map("fv", "<WDTP_Paste>", WDTP)
     vim.map("r", "<WDTP_Rename>", WDTP)
     vim.map("x", "<WDTP_Delete>", WDTP)
