@@ -211,6 +211,7 @@ return
 
 <MSO_FocusSearchBox>:
     Send, ^e 
+    vim.mode("insert", MSOutlook)
 return
 
 <MSO_ToggleFlag>:

@@ -58,7 +58,7 @@ TCCompare=1
 BeyondCompare4=1
 Foobar2000=1
 VimDConfig=1
-MicrosoftExcel=1
+MicrosoftExcel=0
 ;seems it is ok w/o below code for MicrosoftOutlook
 MicrosoftOutlook=1
 Explorer=1

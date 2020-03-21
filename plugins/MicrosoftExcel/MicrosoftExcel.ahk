@@ -19,16 +19,15 @@ MicrosoftExcel:
 
     vim.SetWin(MSExcel, "XLMAIN")
 
-    vim.comment("<MSE_InsertMode>", "insert模式")
-    vim.comment("<MSE_NormalMode>", "normal模式")
+    vim.comment("<MSE_InsertMode>", "insert Mode")
+    vim.comment("<MSE_NormalMode>", "normal Mode")
     vim.comment("<MSE_SheetReName>", "重命名当前工作表名称")
     vim.comment("<MSE_GoTo>", "跳转到指定行列值的表格")
-    vim.comment("<MSE_SaveAndExit>", "保存并退出")
-    vim.comment("<MSE_DiscardAndExit>", "放弃修改并退出")
+    vim.comment("<MSE_Save>", "Save Workbook")
+    vim.comment("<MSE_DiscardAndExit>", "Exit w/o Save")
     vim.comment("<MSE_Undo>", "撤销")
     vim.comment("<MSE_Redo>", "重做")
-    vim.comment("<MSE_SaveAndExit>", "保存后退出")
-    ;vim.comment("<MSE_DiscardAndExit>", "不保存退出")
+    vim.comment("<MSE_SaveAndExit>", "Save and Exit")
     vim.comment("<MSE_Color_Font>", "设置选中区域字体为上次颜色")
     vim.comment("<MSE_Color_Cell>", "填充选中表格背景为上次颜色")
     vim.comment("<MSE_Color_All>", "同时应用字体颜色、背景颜色")
@@ -68,24 +67,25 @@ MicrosoftExcel:
     vim.map("<esc>", "<MSE_NormalMode>", MSExcel)
     vim.map("I", "<MSE_AltMode>", MSExcel)
 
-    ;数字计数
-    vim.map("1", "<1>", MSExcel)
-    vim.map("2", "<2>", MSExcel)
-    vim.map("3", "<3>", MSExcel)
-    vim.map("4", "<4>", MSExcel)
-    vim.map("5", "<5>", MSExcel)
-    vim.map("6", "<6>", MSExcel)
-    vim.map("7", "<7>", MSExcel)
-    vim.map("8", "<8>", MSExcel)
-    vim.map("9", "<9>", MSExcel)
+    ; comment below map to make it possible to input numbers evenin Normal Mode
+    ;vim.map("1", "<1>", MSExcel)
+    ;vim.map("2", "<2>", MSExcel)
+    ;vim.map("3", "<3>", MSExcel)
+    ;vim.map("4", "<4>", MSExcel)
+    ;vim.map("5", "<5>", MSExcel)
+    ;vim.map("6", "<6>", MSExcel)
+    ;vim.map("7", "<7>", MSExcel)
+    ;vim.map("8", "<8>", MSExcel)
+    ;vim.map("9", "<9>", MSExcel)
 
     ;撤销与重复
     vim.map("u", "<MSE_Undo>", MSExcel)
     vim.map("<c-r>", "<MSE_Redo>", MSExcel)
 
-    ;Z保存与退出
-    vim.map("ZZ", "<MSE_SaveAndExit>", MSExcel)
-    vim.map("ZQ", "<MSE_DiscardAndExit>", MSExcel)
+    ; Save and exit
+    vim.map(":w", "<MSE_Save>", MSExcel)
+    vim.map(":wq", "<MSE_SaveAndExit>", MSExcel)
+    vim.map(":q", "<MSE_DiscardAndExit>", MSExcel)
 
     ;颜色
     vim.map("""", "<MSE_Color_All>", MSExcel)
@@ -1472,7 +1472,8 @@ MSE_CustomAutoFilter(ArithmeticOpr,CurrentValue)
 
 <MSE_Paste_Value>:
 {
-    send ^!v!v{enter}
+    ;send ^!v!v{enter}
+    getExcel().Selection.PasteSpecial(-4163)
     return
 }
 
@@ -1481,8 +1482,6 @@ MSE_CustomAutoFilter(ArithmeticOpr,CurrentValue)
     getExcel().Selection.Font.Color := FontColor
     return
 }
-
-
 
 <MSE_Color_Cell>:
 {
@@ -1854,6 +1853,12 @@ MSE_CustomAutoFilter(ArithmeticOpr,CurrentValue)
         Return
     excel.ActiveSheet.Range(Reference).Select
     ;objRelease(excel)
+    return
+}
+
+<MSE_Save>:
+{
+    send ^s
     return
 }
 
