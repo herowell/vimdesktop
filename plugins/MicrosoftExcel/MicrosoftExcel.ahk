@@ -21,7 +21,7 @@ MicrosoftExcel:
 
     vim.comment("<MSE_InsertMode>", "insert Mode")
     vim.comment("<MSE_NormalMode>", "normal Mode")
-    vim.comment("<MSE_SheetReName>", "重命名当前工作表名称")
+    vim.comment("<MSE_SheetReName>", "Rename Current Worksheet")
     vim.comment("<MSE_GoTo>", "跳转到指定行列值的表格")
     vim.comment("<MSE_Save>", "Save Workbook")
     vim.comment("<MSE_DiscardAndExit>", "Exit w/o Save")
@@ -83,7 +83,7 @@ MicrosoftExcel:
     vim.map("<c-r>", "<MSE_Redo>", MSExcel)
 
     ; Save and exit
-    vim.map(":w", "<MSE_Save>", MSExcel)
+    vim.map(":ww", "<MSE_Save>", MSExcel)
     vim.map(":wq", "<MSE_SaveAndExit>", MSExcel)
     vim.map(":q", "<MSE_DiscardAndExit>", MSExcel)
 
